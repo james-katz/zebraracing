@@ -464,7 +464,7 @@ app.listen(PORT, async() => {
             const receivedTxns = txSummaries.transaction_summaries.filter((t) => t.kind == 'received').reverse();
             const lastTxid = receivedTxns[0].txid;
             let txCount = 0;
-            if(lastTxid && appTxid != lastTxid) {               
+            if(receivedTxns.length > 0 && lastTxid && appTxid != lastTxid) {               
                 for(const tx of receivedTxns) {
                     if(tx.txid == appTxid) {
                         console.log('this is old tx')
