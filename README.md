@@ -57,14 +57,18 @@ Given the bugs listed above and the PoC nature of this project, players should p
     ```bash
     cd zingolib-wrapper
     ```
-2. Install the required dependencies and build the project:
+2. zingolib-wrapper is experimental, use the `dev` brach:
+    ```bash
+    git checkout dev
+    ```
+3. Install the required dependencies and build the project:
     ```bash
     npm install
     npm run build
     ```
     > Note: Make sure you have Rust installed to build this project.
 
-3. Return to the zebraracing directory:
+4. Return to the zebraracing directory:
     ```bash
     cd ..
     ```
