@@ -462,24 +462,26 @@ app.listen(PORT, async() => {
             const appTxid = state.txid;
             const txSummaries = await client.getTransactionsSummaries();
             const receivedTxns = txSummaries.transaction_summaries.filter((t) => t.kind == 'received').reverse();
-            const lastTxid = receivedTxns[0].txid;
-            let txCount = 0;
-            if(receivedTxns.length > 0 && lastTxid && appTxid != lastTxid) {               
-                for(const tx of receivedTxns) {
-                    if(tx.txid == appTxid) {
-                        console.log('this is old tx')
-                        break;
+            if(receivedTxns.length > 0) {
+                const lastTxid = receivedTxns[0].txid;
+                let txCount = 0;
+                if(lastTxid && appTxid != lastTxid) {               
+                    for(const tx of receivedTxns) {
+                        if(tx.txid == appTxid) {
+                            console.log('this is old tx')
+                            break;
+                        }
+
+                        const t = await parseTransaction(tx);
+                        console.log(t);
+
+                        txCount ++;
                     }
-
-                    const t = await parseTransaction(tx);
-                    console.log(t);
-
-                    txCount ++;
+                    state.txid = lastTxid;
+                    await state.save();      
+                    
+                    console.log(`Received a total of ${txCount} new transactions.`)
                 }
-                state.txid = lastTxid;
-                await state.save();      
-                
-                console.log(`Received a total of ${txCount} new transactions.`)
             }
 
             depositLock = false;
