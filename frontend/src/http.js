@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseURI = 'http://192.168.0.46:3001';
+const baseURI = 'http://localhost:3001';
 
 class HttpCommons {
     constructor(foo) {

@@ -12,7 +12,7 @@ const { Worker } = require('worker_threads');
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ credentials: true, origin: 'http://192.168.0.46:3000' }));
+app.use(cors({ credentials: true, origin: 'http://127.0.0.1:3000' }));
 
 const client = new ZingoLib("https://zec.rocks:443", "main");
 

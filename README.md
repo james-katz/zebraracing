@@ -103,12 +103,13 @@ Given the bugs listed above and the PoC nature of this project, players should p
     ```
     npm run start
     ```
+    > The app should be running at http://127.0.0.1:3000
 
 #### Backend
 1. To start the backend, navigate to the server directory and run:
     ```
     node index.js
     ```
-    
+
 Now the project should be running, and you can start interacting with it!
 
