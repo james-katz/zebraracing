@@ -41,7 +41,7 @@ Given the bugs listed above and the PoC nature of this project, players should p
 ### Step 1: Clone the Repositories
 1. Clone this repository: [I'll add the link here]
     ```bash
-    git clone [repository-link]
+    git clone https://github.com/james-katz/zebraracing.git
     ```
 2. Change into the project directory:
     ```bash
@@ -49,7 +49,7 @@ Given the bugs listed above and the PoC nature of this project, players should p
     ```
 3. Clone the required dependency project (zingolib-wrapper) while inside the zebraracing directory:
     ```
-    git clone [zingolib-wrapper-repo-link]
+    git clone https://github.com/james-katz/zingolib-wrapper.git
     ```
 
 ### Step 2: Build the zingolib-wrapper
